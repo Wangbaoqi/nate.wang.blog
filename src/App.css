@@ -1,12 +1,85 @@
-.App {
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 60px;
+  width: 100%;
+  line-height: 60px;
+  color: #fff;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0 150px;
+}
+
+.header .logo{
+  float: left;
+  font-size: 16px;
+  font-weight: bold;
+}
+.header .menu {
+  float: right;
+  line-height: 60px;
+  background: rgba(255, 255, 255, 0);
+  border-bottom: 0;
+}
+
+.menu .menu-item {
+  display: inline-block;
+  height: 60px;
+  line-height: 60px;
+  padding: 0 22px;
+  cursor: pointer;
+}
+.menu-item a {
+  color: #fff;
+}
+
+
+.container {
+  height: 100vh;
+  min-height: 40rem;
+  background: linear-gradient(to bottom,rgba(92,77,66,.8) 0,rgba(92,77,66,.8) 100%),url(https://cdn.img.wenhairu.com/images/2019/09/02/8U3fS.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+.content {
+  height: 100vh;
+  padding: 0px 100px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.App-logo {
-  height: 40vmin;
+
+.container h1 {
+  color: #fff;
+  font-size: 3.25rem;
+}
+.container p {
+  color: rgba(255,255,255,.75);
+  font-size: 1rem;
+}
+.container .btn {
+  display: block;
+  padding: .95rem 2.25rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 10rem;
+  margin-top: 2rem;
+  cursor: pointer;
+}
+.container .btn-primary {
+  color: #fff;
+  background-color: #f4623a;
+  border-color: #f4623a;
 }
 
 
-.App-link {
-  color: #09d3ac;
-}
+
