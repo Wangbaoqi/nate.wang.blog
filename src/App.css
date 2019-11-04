@@ -10,6 +10,7 @@
   font-size: 14px;
   background: rgba(255, 255, 255, 0.2);
   padding: 0 150px;
+  z-index: 100;
 }
 
 .header .logo{

@@ -1,26 +1,38 @@
-import React, { Component, Fragment } from 'react';
+import React from 'react';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Route,
   Switch
 } from 'react-router-dom'
 
-import { Navigater, Home, Case } from './components/index'
+import createStore from './store/index'
+import menuReducer from './reducers/themeReducer'
+import Provider from './store/Provider'
+
+import { Home, Case, Project, About } from './components/index'
+import NavigaterCon from './containers/Nav'
 
 import './App.css';
 
+
+const store = createStore(menuReducer)
+
 function App() {
   return (
-    <Fragment>
+    <Provider store = {store}>
       <Router>        
+        <NavigaterCon />
         <Switch>
+          <Route path='/about' component={About} />
+          <Route path='/project' component={Project} />
           <Route path='/case' component={Case} />
           <Route path='/' component={Home} />
         </Switch>
       </Router>
-    </Fragment>
+    </Provider>
   );
 }
 
 export default App;
+
 

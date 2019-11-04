@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 
 
 import { Navigater } from './index'
@@ -8,8 +8,8 @@ import { Navigater } from './index'
 export default class Home extends Component {
   render() {
     return (
-      <div>
-        <Navigater />
+      <Fragment>
+        {/* <Navigater /> */}
 
         <section className='container'>
           <div className='content'>
@@ -18,7 +18,7 @@ export default class Home extends Component {
             <a className='btn btn-primary' href='http://49.233.132.251/dist/'>进入博客</a>
           </div>
         </section>
-      </div>
+      </Fragment>
     )
   }
 }
