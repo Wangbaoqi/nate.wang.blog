@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
-import { Navigater } from './index'
+import NavigaterCon from '../containers/Nav'
+
 import { Timeline, Icon } from 'antd'
 
 import '../style/about.css'
@@ -18,7 +19,7 @@ export default class About extends Component {
     }
     return (
       <Fragment>
-        <Navigater customStyle={customStyle} />
+        <NavigaterCon customStyle={customStyle}/>
         <section className='about'>
           <Timeline mode="alternate">
             <Timeline.Item>2017-06-01 Graduated from Jiangsu University of science and technology </Timeline.Item>

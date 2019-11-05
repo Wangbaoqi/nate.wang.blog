@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 
-import { Navigater } from './index'
+import NavigaterCon from '../containers/Nav'
+
 import { Carousel, Tabs, Card, Icon, Avatar, Row, Col } from 'antd'
 import { StickyContainer, Sticky } from 'react-sticky'
 
@@ -13,6 +14,11 @@ const { Meta } = Card;
 
 export default class Case extends Component {
 
+  
+  componentDidMount() {
+    
+  }
+  
 
   handleCarouselChange(a, b, c) {
     console.log(a, b, c);
@@ -70,7 +76,7 @@ export default class Case extends Component {
 
     return (
       <Fragment>
-        {/* <Navigater customStyle={customStyle} /> */}
+        <NavigaterCon customStyle={customStyle} />
         <section className='case'>
           <Carousel afterChange={this.handleCarouselChange.bind(this)}>
             <div>

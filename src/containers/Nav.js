@@ -3,12 +3,15 @@
 import React, { Component } from 'react'
 
 import PropTypes from 'prop-types'
-import {connect} from '../store/connect'
+import { connect } from '../store/connect'
 import Navigater from '../components/Nav'
 
 
 class NavigaterCon extends Component {
 
+  static propTypes = {
+    menuTheme: PropTypes.string
+  }
   constructor(props) {
     super(props);
     this.state = {
@@ -24,35 +27,48 @@ class NavigaterCon extends Component {
           title: '项目'
         },{
           path: '/about',
-          title: '关于M'
+          title: '关于Me'
         }
       ]
     }
   }
 
+
   
   componentDidMount() {
-    console.log(this.context.router, 'useParams');
     
   }
 
+
+  
+  componentDidUpdate(nextProps, nextState) {
+    console.log(nextProps, nextState, 'Nav ----- componentDidUpdate');
+    
+  }
   
   
 
 
-  render() {
+  render() {    
     const { menuList } = this.state;
+    const { menuTheme = '', customStyle } = this.props;
+    console.log(menuTheme, 'menuTheme');
+    
     return (
       <Navigater 
         menuList={menuList}
+        customStyle={customStyle}
       />
         
     )
   }
 }
 
-const mapStateToProps = () => {
-
+const mapStateToProps = (state, props) => {
+  return {
+    menuTheme: state.menuTheme,
+    ...props
+  }
 }
 
 const mapDispatchToProps = () => {

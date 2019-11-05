@@ -21,7 +21,7 @@ function App() {
   return (
     <Provider store = {store}>
       <Router>        
-        <NavigaterCon />
+        {/* <NavigaterCon /> */}
         <Switch>
           <Route path='/about' component={About} />
           <Route path='/project' component={Project} />

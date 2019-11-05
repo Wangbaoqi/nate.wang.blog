@@ -26,7 +26,7 @@ export const connect = (mapStateToProps, mapDispatchToProps) => (WrappedComponen
     }
 
     
-    componentWillMount() {
+    componentDidMount() {
       const { store } = this.context;
       // action of update render page state
       this._updateStateToProps();
@@ -36,7 +36,7 @@ export const connect = (mapStateToProps, mapDispatchToProps) => (WrappedComponen
     
     _updateStateToProps() {
       const { store } = this.context;
-      const stateProps = mapStateToProps ? mapStateToProps(store.getState, this.props) : {};
+      const stateProps = mapStateToProps ? mapStateToProps(store.getState(), this.props) : {};
       const dispatchProps = mapDispatchToProps ? mapDispatchToProps(store.dispatch) : {};
 
       this.setState({

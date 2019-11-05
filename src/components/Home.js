@@ -1,15 +1,16 @@
 import React, { Component, Fragment } from 'react'
 
 
-import { Navigater } from './index'
+import NavigaterCon from '../containers/Nav'
 
 
 
 export default class Home extends Component {
   render() {
+    
     return (
       <Fragment>
-        {/* <Navigater /> */}
+        <NavigaterCon />
 
         <section className='container'>
           <div className='content'>

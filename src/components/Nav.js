@@ -5,30 +5,8 @@ import {
 
 export default class Navigater extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      menuList: [
-        {
-          path: '/',
-          title: '首页'
-        },{
-          path: '/case',
-          title: '案例'
-        },{
-          path: '/project',
-          title: '项目'
-        },{
-          path: '/about',
-          title: '关于Me'
-        }
-      ]
-    }
-  }
-
   render() {
-    const { menuList } = this.state;
-    const { customStyle = {} } = this.props;
+    const { menuList = [], customStyle = {} } = this.props;
     const { menuStyle = {}, menuItemStyle = {} } = customStyle;
 
     const menuItem = menuList.map((item, index) => {

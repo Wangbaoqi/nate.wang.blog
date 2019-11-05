@@ -17,7 +17,7 @@ export default function menuReducer(state, action) {
 
   switch (action.type) {
     case MENUTHEME:
-      return {menuTheme: { ...state, ...action.menuTheme }}
+      return {menuTheme: action.menuTheme }
     default:
       return false
   }
