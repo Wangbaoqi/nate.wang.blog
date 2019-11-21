@@ -47,8 +47,6 @@ class NavigaterCon extends Component {
   }
   
   
-
-
   render() {    
     const { menuList } = this.state;
     const { menuTheme = '', customStyle } = this.props;

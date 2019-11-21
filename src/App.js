@@ -5,6 +5,8 @@ import {
   Switch
 } from 'react-router-dom'
 
+import { renderRoutes } from 'react-router-config'
+
 import createStore from './store/index'
 import menuReducer from './reducers/themeReducer'
 import Provider from './store/Provider'
@@ -17,17 +19,29 @@ import './App.css';
 
 const store = createStore(menuReducer)
 
+
+const routes = [
+  {
+    path: '/about',
+    component: About,
+  },{
+    path: '/project',
+    component: Project,
+  },{
+    path: '/case',
+    component: Case,
+  },{
+    path: '/',
+    component: Home
+  }
+]
+
 function App() {
   return (
     <Provider store = {store}>
       <Router>        
         {/* <NavigaterCon /> */}
-        <Switch>
-          <Route path='/about' component={About} />
-          <Route path='/project' component={Project} />
-          <Route path='/case' component={Case} />
-          <Route path='/' component={Home} />
-        </Switch>
+        {renderRoutes(routes)}
       </Router>
     </Provider>
   );
