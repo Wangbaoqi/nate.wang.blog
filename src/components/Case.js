@@ -5,12 +5,38 @@ import NavigaterCon from '../containers/Nav'
 import { Carousel, Tabs, Card, Icon, Avatar, Row, Col } from 'antd'
 import { StickyContainer, Sticky } from 'react-sticky'
 
+import {
+  BrowserRouter as Router,
+  Route
+} from 'react-router-dom'
+
 
 import '../style/case.css'
 
 const { TabPane } = Tabs;
 const { Meta } = Card;
 
+
+const caseLists = [
+  {
+    title: 'service worker',
+    description: 'service work需要基于https协议',
+    img: 'https://cdn.img.wenhairu.com/images/2020/03/05/m7WB6.png ',
+    link: 'https://wangbaoqi.github.io/nateCase/serviceWork/index.html'
+  },
+  {
+    title: 'MVC架构模式',
+    description: '前端简易实现MVC架构模式',
+    img: 'https://cdn.img.wenhairu.com/images/2020/03/05/m7JfX.png',
+    link: 'https://wangbaoqi.github.io/nateCase/mvcFront/mvc.html'
+  },
+  {
+    title: 'MVP架构模式',
+    description: '前端简易实现MVP架构模式',
+    img: 'https://cdn.img.wenhairu.com/images/2020/03/05/mSN5N.png',
+    link: 'https://wangbaoqi.github.io/nateCase/mvpFront/index.html'
+  }
+]
 
 export default class Case extends Component {
 
@@ -27,6 +53,10 @@ export default class Case extends Component {
 
   handleTabChange(active) {
     console.log(active, 'handleTabChange');
+  }
+
+  handleNavigate(link) {
+    window.location.href = link
   }
 
   render() {
@@ -51,7 +81,7 @@ export default class Case extends Component {
     );
 
 
-    const cardPanel = [0, 1, 2, 3, 4].map((card ,index) => {
+    const cardPanel = caseLists.map((card ,index) => {
       return (
         <Col xs={24} sm={8} md={12} lg={6} xl={6} span={6} key={`col${index}`}>
           <Card
@@ -59,15 +89,15 @@ export default class Case extends Component {
             cover={
               <img
                 alt="example"
-                src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+                src={card.img}
               />
             }
+            onClick={this.handleNavigate.bind(this, card.link)}
             
           >
             <Meta
-              avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-              title="Card title"
-              description="This is the description"
+              title={card.title}
+              description={card.description}
             />
           </Card>
         </Col>
@@ -80,24 +110,21 @@ export default class Case extends Component {
         <section className='case'>
           <Carousel afterChange={this.handleCarouselChange.bind(this)}>
             <div>
-              <h3>1</h3>
+              <img  className='case-Carousel' src="https://cdn.img.wenhairu.com/images/2020/03/05/m7KQp.jpg" alt=""/>
             </div>
           </Carousel>
 
           <section className='tabCase'>
             <StickyContainer>
               <Tabs defaultActiveKey="1" renderTabBar={renderTabBar} onChange={this.handleTabChange.bind(this)}>
-                <TabPane tab="Html" key="1" >
+                <TabPane tab="Javascript" key="1" >
                   <Row gutter={[{ xs: 8, sm: 16, md: 24, lg: 32 }, 20]}>
                     {cardPanel}
                   </Row>
 
                 </TabPane>
-                <TabPane tab="Tab 2" key="2">
-                  Content of Tab Pane 2
-                </TabPane>
-                <TabPane tab="Tab 3" key="3">
-                  Content of Tab Pane 3
+                <TabPane tab="Css" key="2">
+                  this is css case here
                 </TabPane>
               </Tabs>
             </StickyContainer>
